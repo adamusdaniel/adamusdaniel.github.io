@@ -1,0 +1,99 @@
+
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Dokumentacja EkoQuiz</title>
+</head>
+<body marginwidth="50" marginheight="15" background="stronnatlo.png" bgproperties="fixed">
+
+<h1><font color="green">Dokumentacja aplikacji EkoQuiz</font></h1>
+
+<h2><font color="blue">Informacje o autorach</font></h2>
+<h4>Aplikcję przygotowali:</h4>
+<h4>Karolina Domalik	186201	KrDZIs3011Io</h4>
+<h4>Daniel Adamus	185757	KrDZIs3011Io</h4>
+
+<h2><font color="blue">Opis</font></h2>
+<p style="text-indent: 3%">Aplikacja została przygotowana przez studentów w ramach przedmiotu Programowanie Systemów Mobilnych. <br>
+Aplikacja ma za zadanie ułatwić przyswajanie wiedzy przez studentów z zakresu finansów oraz ekonomii. Dodatkowo<br>
+sprawdza wiedzę i przygotowanie do sesji egzaminacyjnej. W obecnej wersji programu dostępnych jest aż 50 pytań <br>
+o różnych poziomach trudności. Pytania testowe mają 3 warianty odpowiedzi i tylko jedna z nich jest poprawna.</p>
+
+<h2><font color="blue">Funkcjonalności</font></h2>
+<ul type="circle">
+
+	<li>Ekran startowy i pobieranie bazy pytań na urządzenie.</li>
+	<li>Wybór z menu 3 dostępnych aktywności:</li>
+		<ol>•	Start</ol>
+		<ol>•	Wyniki</ol>
+		<ol>•	Instrukcja</ol>
+	<li>Aktywność Uruchom pozwala na odpowiadanie na pytania.</li>
+	<li>Po każdym pytaniu gracz otrzymuje punkt za każdą dobrą odpowiedź.</li>
+	<li>Dodatkowo gracz otrzymuje kwotę pieniężną po odpowiedzeniu na pytanie.</li>
+	<li>Wysokość gotówki zależy od poziomu trudności pytania.</li>
+	<li>Po skończeniu puli pytań lub wyczerpianiu zasobów pieniężnych gra jest zatrzymywana.</li>
+	<li>Zostaje wyświetlany ekran z wynikiem aktualnej gry, komunikat komentujący wynik <br> oraz liczba przyznanych gwiazdek (0-5).</li>
+	<li>Na ekranie znajduje się przycisk do powrotu do menu.</li>
+	<li>Kolejnym przyciskiem w menu to wyniki, który pozwala na przejrzenie dotychczasowych<br>wyników uzysknych w aplikacji.</li>
+	<li>Wyniki sortowane są od najwyższego do najniższego.</li>
+	<li>Ostatnim przyciskiem w menu jest intrukcja, która pozwala na zapoznanie się <br> z zasadami gry.</li>
+	
+</ul>
+
+<h2><font color="blue">Sposób obsługi gotowej aplikacji</font></h2>
+<p style="text-indent: 3%">Program uruchamia się po naciśnięciu ikony na telefonie użytkownika.
+<img src="scr1.jpg" />
+</br>
+<p style="text-indent: 3%">Uruchomiony zostje ekran główny. Znajduje się na nim logo aplikacji i przycisk uruchom,<br>
+którzy prowadzi do aktywności związanej z menu całego programu. Tutaj pobierana jest baza<br>
+pytań na telefon użytkownika.<br>
+<img src="zdjecia/6.png" />
+<p style="text-indent: 3%">W menu dostępne są 3 przyciski, które pozwalają na uruchomienie quizu przyciskiem "Start",<br>
+wyświetlanie wyników quizu "Wyniki" oraz instrukcji "Instrukcja".<br>
+<img src="zdjecia/8.png" />
+<p style="text-indent: 3%">Po przejściu do aktywności związanej z uruchomieniem quizu wyświetlane są pytania i możliwe odpowiedzi.<br>
+<br>W lewym dolnym rogu wyświetlany jest aktualny stan gotówki użytkownika, którzy maleje bądź rośnie w zależności od opowiedzi.<br>
+Po naciśnięciu przycisku "NASTĘPNE PYTANIE", odpowiedź użytkownika zostaje sprawdzona, zapisana i zostaje podane kolejne pytanie.<br>
+<img src="zdjecia/5.png" />
+<p style="text-indent: 3%">Po ukończeniu quizu wyświetlany jest ekran z aktualnym wynikiem oraz ilością otrzymanych gwiazdek. Dodatkowo komunikat informuje<br>
+użytkownika o poziomie jego wiedzy. Za pomocą przycisku "MENU" można wrócić do ekranu głównego<br>
+<img src="zdjecia/2.png" />               <img src="zdjecia/3.png" /> 
+<p style="text-indent: 3%">W menu głównym pod przyciskiem "Wyniki" znajduje się lista wszystkich dotychczasowych wyników, które<br>
+posortowane są od najwyższych do najniższych. Jeśli gracz przystępuje do gry po raz pierwszy, jest o tym informowany.<br>
+<img src="zdjecia/9.png" />     <img src="zdjecia/7.png" />
+<p style="text-indent: 3%">W menu głównym pod przyciskiem "Instrukcja" znajdują się zasady gry.<br>
+<img src="zdjecia/4.png" />
+
+<h2><font color="blue">Opis klas</font></h2>
+<ul type="circle">
+
+	<li><h4>DatabaseHelper</h4></li>
+		<ol>Rozszerza możliwości klasy SQLiteOpenHelper. Dzięki tej klasie lokalizowana jest pobrana baza danych<br>
+		Dodatkowo pobiera pytania z bazy.
+		</ol>
+	<li><h4>DbHelper</li></h4>
+		<ol>W tej klasie tworzona jest baza wyników quizów.</ol>
+	<li><h4>InstrukcjaActivity</li></h4>
+		<ol>Klasa służy do wyświetlania instrukcji programu.</ol>
+	<li><h4>MainActivity</li></h4>
+		<ol>W tej klasie pobierana jest baza pytań z serwera. Zawiera też przycisk pozwalający na przejście do menu głównego.</ol>
+	<li><h4>MenuActivity</li></h4>
+		<ol>Z tej klasy można przejść do trzech aktywności (start, wyniki, instrukcja).</ol>
+	<li><h4>Pytania</li></h4>
+		<ol>Klasa zawiera metody które ustawiają i zwracają wartości pytań i odpowiedzi.</ol>
+	<li><h4>QuizActivity</li></h4>
+		<ol>W tej klasie wraz z postępem pytań liczona jest gotówka. Klasa ta zwiera także metode która wyświetla osiągnięty poziom pytań.<br>
+		Wielkość wyniku wpływa na ilość wyświetlanych w kolejnej aktywności gwiazdek. Dopóki gotówka jest dostępna wynik wzrasta i daje <br>możliwość odpowiadania na kolejne pytania.
+		</ol>												
+	<li><h4>Wynik</li></h4>
+		<ol>W tej klasie na podstawie ilości odpowiedzianych poprawnie pytań wyświetlany jest komunikat. Wynik przekazywany jest do bazy wyników.</ol>
+	<li><h4>Wyniki</li></h4>
+		<ol>Klasa pozwala na wyświetlanie posortowanych wyników zapisanych w bazie.</ol>
+<h2><font color="blue">Diagram UML</font></h2>
+		
+<br><img src="zdjecia/uml.png" /><br>
+Diagram wygenerowany został dzięki dostępnemu pluginowi o nazwie CodeIris
+
+</body>
+</html>
